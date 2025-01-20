@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AssemblyScript WebAssembly Example</title>
+</head>
+<body>
+    <h1>WebAssembly Result:</h1>
+    <div id="result"></div>
+    <script>
+        // WebAssembly モジュールを読み込む
+        async function loadWasm() {
+            const response = await fetch('../build/release.wasm');
+            const wasmBinary = await response.arrayBuffer();
+            
+            const { instance } = await WebAssembly.instantiate(wasmBinary);
+
+            // WebAssembly の関数を呼び出す
+            const result = instance.exports.add(5, 3);
+
+            // 結果を表示
+            document.getElementById('result').innerText = `Result from WebAssembly: ${result}`;
+        }
+
+        loadWasm();
+    </script>
+</body>
+</html>
