@@ -7,23 +7,9 @@
 </head>
 <body>
     <h1>WebAssembly Result:</h1>
-    <div id="result"></div>
-    <script>
-        // WebAssembly モジュールを読み込む
-        async function loadWasm() {
-            const response = await fetch('../build/release.wasm');
-            const wasmBinary = await response.arrayBuffer();
-            
-            const { instance } = await WebAssembly.instantiate(wasmBinary);
+    <div id="Result"></div>
+    <script src="index.js" type="module"></script>
+    <canvas id="canvas" width="800" height="600" style="border: 1px solid black;"></canvas>
 
-            // WebAssembly の関数を呼び出す
-            const result = instance.exports.add(5, 3);
-
-            // 結果を表示
-            document.getElementById('result').innerText = `Result from WebAssembly: ${result}`;
-        }
-
-        loadWasm();
-    </script>
 </body>
 </html>
