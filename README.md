@@ -26,7 +26,7 @@
     - http-server(実行用)
 
 # 動かし方
--  cd C:\Users\MZGT\Documents\WebAssemblyStudy\my-assemblyscript-project でC:\Users\MZGT\Documents\WebAssemblyStudy\my-assemblyscript-project に移動する
+-  cd C:\Users\MZGT\Documents\WebAssemblyStudy\my-assemblyscript-project で\my-assemblyscript-project に移動する
 - http-server で動かす
  
 
